@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osobní dotazník žáka</title>
+<style>
+@media screen and (max-width:900px){body{padding:16px}.page{margin:0}}
+*{box-sizing:border-box}
+body{margin:0;padding:28px 16px;background:#f8f9fa;color:#1f2933;font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;font-size:14.5px;line-height:1.42;overflow-x:auto}
+.page{width:794px;min-width:794px;margin:30px auto;padding:20mm;background:white;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.top{display:block;margin-bottom:38px}
+.school{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start}
+.logo-box{width:120px;height:90px;display:flex;align-items:center;justify-content:center}.logo-box img{max-width:100%;max-height:100%;object-fit:contain}
+.school-text{font-size:11px;line-height:1.12;color:#111}.school-name{display:block;white-space:nowrap;font-size:13.2px;line-height:1.08;font-weight:800;color:#111}.school-org{display:block;font-size:13.2px;line-height:1.08;font-weight:800;color:#111;margin-bottom:5px}
+h1{color:#111827;font-size:25px;line-height:1.12;margin:0;font-weight:800;text-align:center;text-transform:uppercase}.subtitle{font-size:14px;color:#111827;text-align:center;margin:2px 0 28px}
+.section{border-top:3px solid #111;padding-top:15px;margin-top:19px;break-inside:avoid;page-break-inside:avoid}.section-title{font-weight:800;font-size:16px;margin:0 0 10px;color:#111}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:12px}.field-row.single{grid-template-columns:1fr}.field-row.thirds{grid-template-columns:1fr 1fr 1fr}
+.field{display:flex;align-items:flex-end;gap:7px;min-width:0}.field label{white-space:nowrap;font-weight:500;color:#111827}.line-input{flex:1;min-width:70px;border:0;border-bottom:1px solid #444;font:inherit;padding:2px 3px 1px;outline:none;background:transparent}.line-input:focus{border-bottom:1px solid #2b6cb0}
+.checkbox-row{display:flex;align-items:center;gap:28px;margin-top:14px}.checkbox-label{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:#111827}.checkbox-label input{width:16px;height:16px;accent-color:#2b6cb0}.hint{font-size:12.5px;color:#4a5568;margin-top:2px}
+.signature-row{display:grid;grid-template-columns:260px 1fr;gap:36px;margin-top:58px}.keep{break-inside:avoid;page-break-inside:avoid}
+.actions-panel{margin-top:26px;padding:18px;background:#f7fafc;border:1px solid #e2e8f0;border-radius:8px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{padding:10px 18px;font-size:13.5px;font-weight:700;border:0;border-radius:6px;cursor:pointer}.btn-primary{background:#2b6cb0;color:white}.btn-secondary{background:#4a5568;color:white}.btn-danger{background:#9b2c2c;color:white}.note{margin-top:10px;font-size:12px;color:#4a5568;text-align:center}
+@page{size:A4;margin:20mm}
+@media print{body{padding:0;background:white;font-size:14.5px;line-height:1.42}.page{width:auto;max-width:none;margin:0 auto;box-shadow:none;border-radius:0;padding:0;background:white}.actions-panel,.note{display:none}.top{display:block;margin-bottom:38px}.field-row{margin-bottom:12px}.section{margin-top:19px;padding-top:15px}h1{font-size:25px}.subtitle{margin-bottom:28px}.signature-row{margin-top:58px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top keep">
+    <div class="school">
+      <div class="logo-box"><img src="https://gyby.cz/wp-content/uploads/Logo-GYBY-cerne-bez-pozadi.png" alt="Logo GYBY"></div>
+      <div class="school-text"><span class="school-name">GYMNÁZIUM BRNO-BYSTRC,</span><span class="school-org">příspěvková organizace</span>Vejrostova&nbsp;1143/2, 635&nbsp;00&nbsp;Brno<br>tel.: 533&nbsp;555&nbsp;100<br>www.gyby.cz<br>info@gyby.cz</div>
+    </div>
+  </div>
+  <main>
+    <div class="keep"><h1>Osobní dotazník žáka</h1><div class="subtitle">(pro evidenci žáka)</div></div>
+
+    <section class="section keep">
+      <div class="section-title">Údaje o žákovi</div>
+      <div class="field-row"><div class="field"><label for="jmeno">Jméno</label><input id="jmeno" name="jmeno" class="line-input" type="text"></div><div class="field"><label for="prijmeni">Příjmení</label><input id="prijmeni" name="prijmeni" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="rodne_cislo">Rodné číslo</label><input id="rodne_cislo" name="rodne_cislo" class="line-input" type="text"></div><div class="field"><label for="datum_narozeni">Datum narození</label><input id="datum_narozeni" name="datum_narozeni" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="misto_narozeni">Místo narození</label><input id="misto_narozeni" name="misto_narozeni" class="line-input" type="text"></div><div class="field"><label for="statni_prislusnost">Státní příslušnost</label><input id="statni_prislusnost" name="statni_prislusnost" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="bydliste">Bydliště</label><input id="bydliste" name="bydliste" class="line-input" type="text"></div><div class="field"><label for="psc">PSČ</label><input id="psc" name="psc" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="mobil">Mobilní telefon</label><input id="mobil" name="mobil" class="line-input" type="text"></div><div class="field"><label for="email">E-mail</label><input id="email" name="email" class="line-input" type="email"></div></div>
+      <div class="field-row single"><div class="field"><label for="puvodni_skola">Původní škola</label><input id="puvodni_skola" name="puvodni_skola" class="line-input" type="text"></div></div>
+    </section>
+
+    <section class="section keep">
+      <div class="section-title">Otec</div>
+      <div class="field-row"><div class="field"><label for="otec_jmeno">Jméno</label><input id="otec_jmeno" name="otec_jmeno" class="line-input" type="text"></div><div class="field"><label for="otec_prijmeni">Příjmení</label><input id="otec_prijmeni" name="otec_prijmeni" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="otec_bydliste">Bydliště</label><input id="otec_bydliste" name="otec_bydliste" class="line-input" type="text"></div><div class="field"><label for="otec_psc">PSČ</label><input id="otec_psc" name="otec_psc" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="otec_mobil">Mobilní telefon</label><input id="otec_mobil" name="otec_mobil" class="line-input" type="text"></div><div class="field"><label for="otec_email">E-mail</label><input id="otec_email" name="otec_email" class="line-input" type="email"></div></div>
+      <div class="field-row single"><div class="field"><label for="otec_zamestnani">Zaměstnání</label><input id="otec_zamestnani" name="otec_zamestnani" class="line-input" type="text"></div></div>
+    </section>
+
+    <section class="section keep">
+      <div class="section-title">Matka</div>
+      <div class="field-row"><div class="field"><label for="matka_jmeno">Jméno</label><input id="matka_jmeno" name="matka_jmeno" class="line-input" type="text"></div><div class="field"><label for="matka_prijmeni">Příjmení</label><input id="matka_prijmeni" name="matka_prijmeni" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="matka_bydliste">Bydliště</label><input id="matka_bydliste" name="matka_bydliste" class="line-input" type="text"></div><div class="field"><label for="matka_psc">PSČ</label><input id="matka_psc" name="matka_psc" class="line-input" type="text"></div></div>
+      <div class="field-row"><div class="field"><label for="matka_mobil">Mobilní telefon</label><input id="matka_mobil" name="matka_mobil" class="line-input" type="text"></div><div class="field"><label for="matka_email">E-mail</label><input id="matka_email" name="matka_email" class="line-input" type="email"></div></div>
+      <div class="field-row single"><div class="field"><label for="matka_zamestnani">Zaměstnání</label><input id="matka_zamestnani" name="matka_zamestnani" class="line-input" type="text"></div></div>
+    </section>
+
+    <section class="section keep">
+      <div class="checkbox-row"><strong>Primární zákonný zástupce:</strong><label class="checkbox-label"><input type="checkbox" id="prim_otec" name="prim_otec"> OTEC</label><label class="checkbox-label"><input type="checkbox" id="prim_matka" name="prim_matka"> Matka</label></div>
+      <div class="hint">Zaškrtnout pouze jednu možnost.</div>
+      <div class="signature-row"><div class="field"><label for="datum">Datum</label><input id="datum" name="datum" class="line-input" type="text"></div><div class="field"><label for="podpis">Podpis</label><input id="podpis" name="podpis" class="line-input" type="text"></div></div>
+    </section>
+  </main>
+  <div class="actions-panel"><button type="button" class="btn btn-secondary" onclick="saveToBrowser()">💾 Uložit do prohlížeče</button><button type="button" class="btn btn-danger" onclick="clearForm()">🗑️ Vymazat formulář</button><button type="button" class="btn btn-primary" onclick="exportToPDF()">📄 Exportovat do PDF / Tisk</button></div>
+  <div class="note">Při tisku do PDF vypněte v prohlížeči „Záhlaví a zápatí“, aby se netiskl odkaz na stránku.</div>
+</div>
+<script>
+const STORAGE_KEY='osobni_dotaznik_zaka_gyby';
+function collectData(){const data={};document.querySelectorAll('input').forEach(el=>{data[el.name||el.id]=el.type==='checkbox'?el.checked:el.value});return data}
+function fillData(data){document.querySelectorAll('input').forEach(el=>{const key=el.name||el.id;if(Object.prototype.hasOwnProperty.call(data,key)){if(el.type==='checkbox')el.checked=!!data[key];else el.value=data[key]}})}
+function saveToBrowser(){localStorage.setItem(STORAGE_KEY,JSON.stringify(collectData()));alert('Data byla uložena do paměti prohlížeče.')}
+function loadFromBrowser(){const saved=localStorage.getItem(STORAGE_KEY);if(saved)fillData(JSON.parse(saved))}
+function clearForm(){if(!confirm('Opravdu vymazat všechna vyplněná pole?'))return;document.querySelectorAll('input').forEach(el=>{if(el.type==='checkbox')el.checked=false;else el.value=''});localStorage.removeItem(STORAGE_KEY)}
+function exportToPDF(){window.print()}
+document.addEventListener('DOMContentLoaded',()=>{loadFromBrowser();const otec=document.getElementById('prim_otec');const matka=document.getElementById('prim_matka');otec.addEventListener('change',()=>{if(otec.checked)matka.checked=false});matka.addEventListener('change',()=>{if(matka.checked)otec.checked=false})});
+</script>
+</body>
+</html>
